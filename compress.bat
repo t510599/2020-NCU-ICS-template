@@ -24,7 +24,7 @@ IF NOT EXIST %folder%%id% echo Code hasn't been created yet^^! Skip.&& goto exit
 
 :compress
 cd %folder%\%id%
-7za a %filename:X=!id!%.zip *.py *.png
+7za a %filename:X=!id!%.zip *.py *.cpp *.png
 
 :exit
 echo.
