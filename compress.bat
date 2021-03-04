@@ -23,8 +23,13 @@ IF '%id%'=='' goto input
 IF NOT EXIST %folder%%id% echo Code hasn't been created yet^^! Skip.&& goto exit
 
 :compress
-cd %folder%\%id%\src\
+REM temporary copy image to compress them
+cd %folder%\%id%\
+copy *.png src\
+
+cd src\
 7za a %filename:X=!id!%.zip *\*.java *.png
+del /q *.png
 move %filename:X=!id!%.zip ..
 
 :exit
