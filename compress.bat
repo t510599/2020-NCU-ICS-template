@@ -23,7 +23,7 @@ IF '%id%'=='' goto input
 IF NOT EXIST %folder%%id% echo Code hasn't been created yet^^! Skip.&& goto exit
 
 :compress
-REM temporary copy image to compress them
+REM copy temporary image to compress them
 cd %folder%\%id%\
 copy *.png src\
 
