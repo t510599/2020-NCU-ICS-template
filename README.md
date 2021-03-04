@@ -46,4 +46,4 @@
 
 ## Notice
 To use scripts, please change `109xxxxxx` in filename of template file to your student number, and those in `compress.bat` and `create.bat`.  
-Also, don't forget to fill up `<name>` with name, `<sid>` with student number in template file (`AX-109xxxxxx.py`, `PX-109xxxxxx.py`).
+Folder can be imported to eclipse directly. ex: `Assignment/1/`.
