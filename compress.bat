@@ -9,12 +9,12 @@ IF errorlevel 1 goto assignment
 
 :assignment
 SET folder=Assignment\
-SET filename=AX-109xxxxxx
+SET filename=aX_109xxxxxx
 goto input
 
 :practice
 SET folder=Practice\
-SET filename=PX-109xxxxxx
+SET filename=pX_109xxxxxx
 goto input
 
 :input
@@ -23,11 +23,12 @@ IF '%id%'=='' goto input
 IF NOT EXIST %folder%%id% echo Code hasn't been created yet^^! Skip.&& goto exit
 
 :compress
-cd %folder%\%id%
-7za a %filename:X=!id!%.zip *.py *.cpp *.png
+cd %folder%\%id%\src\
+7za a %filename:X=!id!%.zip *\*.java *.png
+move %filename:X=!id!%.zip ..
 
 :exit
-echo.
+echo .
 echo Press any key to exit.
 pause > nul
 endlocal

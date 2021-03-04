@@ -7,24 +7,41 @@
 ## Folder structure sample
 ```
 .
+.
 ├── Assignment
-│   ├── <id>
-│   │   ├── 1091作業01.pptx
-│   │   ├── A1-109xxxxxx-1.png
-│   │   ├── A1-109xxxxxx-1.py
-│   │   ├── A1-109xxxxxx-2.png
-│   │   ├── A1-109xxxxxx-2.py
-│   │   └── A1-109xxxxxx.zip
-│   └── AX-109xxxxxx.py (template file)
+│   └── 1
+│       ├── .classpath
+│       ├── .project
+│       ├── bin
+│       ├── src
+│       │   ├── a1_109xxxxxx_1
+│       │   │   └── Solution.java
+│       │   └── a1_109xxxxxx_2
+│       │       └── Solution.java
+│       ├── a1_109xxxxxx_1.png
+│       ├── a1_109xxxxxx_2.png
+│       └── 1092作業1.pptx
 ├── Practice
-│   ├── <id>
-│   │   ├── 1091計實01.pptx
-│   │   ├── P1-109xxxxxx.png
-│   │   ├── P1-109xxxxxx.py
-│   │   └── P1-109xxxxxx.zip
-│   └── PX-109xxxxxx.py (template file)
+│   └── 1
+│       ├── .classpath
+│       ├── .project
+│       ├── bin
+│       ├── src
+│       │   ├── p1_109xxxxxx_1
+│       │   │   └── Solution.java
+│       │   └── p1_109xxxxxx_2
+│       │       └── Solution.java
+│       ├── p1_109xxxxxx_1.png
+│       ├── p1_109xxxxxx_2.png
+│       └── 1092實習1.pptx
 ├── compress.bat
-└── create.bat
+├── create.bat
+└── template-project
+    ├── .classpath
+    ├── .project
+    ├── Solution.java
+    ├── bin
+    └── src
 ```
 
 ## Notice
