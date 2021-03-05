@@ -37,7 +37,7 @@ del /q *.png
 move %filename%.zip ..
 
 :exit
-echo .
+echo.
 echo Press any key to exit.
 pause > nul
 endlocal
