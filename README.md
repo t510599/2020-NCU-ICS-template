@@ -1,10 +1,14 @@
 # 2020-NCU-ICS-template
 
+## Requirement
+- Windows with `robocopy`
+- `7za` in path
+
 ## Usage
 - create.bat: Create files according to id and files.
 - compress.bat: Compress image and code in the folder according to id.
 
-## Folder structure sample
+## Folder structure example
 ```
 .
 .
