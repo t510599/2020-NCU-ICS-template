@@ -72,7 +72,7 @@ IF NOT %files%==1 (
 )
 
 REM template cleanup
-REM del /q Solution.java
+del /q Solution.java
 
 :exit
 echo.
