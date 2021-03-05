@@ -3,18 +3,20 @@ setlocal ENABLEDELAYEDEXPANSION
 chcp 65001 >nul
 
 :setup
+SET student_number=109xxxxxx
+
 choice /C:12 /N /M "Choose Type: 1) Assignment 2) Practice"
 IF errorlevel 2 goto practice
 IF errorlevel 1 goto assignment
 
 :assignment
 SET folder=Assignment\
-SET filename=aX_109xxxxxx
+SET type=a
 goto ask
 
 :practice
 SET folder=Practice\
-SET filename=pX_109xxxxxx
+SET type=p
 goto ask
 
 :ask
@@ -30,14 +32,16 @@ cd %folder%%id%\
 REM replace X in .project
 FOR /F "delims=" %%l in (.project) DO (
     SET line=%%l
-    echo !line:XX=%id%!>>.tmp
+    echo !line:XX=%type%%id%!>>.tmp
 )
 del /q .project
 move .tmp .project >nul
 
+SET filename=%type%%id%_%student_number%
+
 IF NOT %files%==1 (
     FOR /L %%i in (1 1 %files%) DO (
-        SET pn=%filename:X=!id!%_%%i
+        SET pn=%filename%_%%i
 
         mkdir src\!pn!\
 
@@ -54,20 +58,12 @@ IF NOT %files%==1 (
         )
     )
 ) ELSE (
-    SET pn=%filename:X=!id!%
-
-    mkdir src\!pn!\
+    mkdir src\%filename%\
 
     REM replace X in file
     FOR /F "delims=" %%l in (Solution.java) DO (
         SET line=%%l
-
-        REM Replace delay expansion with delay expansion 
-        REM https://stackoverflow.com/a/41537179/9039813
-        for /F "delims=" %%S in (^""X=!pn!"^") do (
-            set line=!line:%%~S!
-        )
-        echo !line!>>src\!pn!\Solution.java
+        echo !line:X=%filename%!>>src\%filename%\Solution.java
     )
 )
 

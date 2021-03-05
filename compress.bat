@@ -3,18 +3,20 @@ setlocal ENABLEDELAYEDEXPANSION
 chcp 65001 >nul
 title Compress
 
+SET student_number=109xxxxxx
+
 choice /C:12 /N /M "Choose Type: 1) Assignment 2) Practice"
 IF errorlevel 2 goto practice
 IF errorlevel 1 goto assignment
 
 :assignment
 SET folder=Assignment\
-SET filename=aX_109xxxxxx
+SET type=a
 goto input
 
 :practice
 SET folder=Practice\
-SET filename=pX_109xxxxxx
+SET type=p
 goto input
 
 :input
@@ -27,10 +29,12 @@ REM copy temporary image to compress them
 cd %folder%\%id%\
 copy *.png src\
 
+SET filename=%type%%id%_%student_number%
+
 cd src\
-7za a %filename:X=!id!%.zip *\*.java *.png
+7za a %filename%.zip *\*.java *.png
 del /q *.png
-move %filename:X=!id!%.zip ..
+move %filename%.zip ..
 
 :exit
 echo .
